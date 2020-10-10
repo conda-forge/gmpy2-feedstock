@@ -11,7 +11,7 @@ source:
     - win_setup.diff
 
 build:
-  number: 0
+  number: 1
   skip: true        # [win and py<35]
   script:
     - python setup.py install
@@ -39,7 +39,7 @@ test:
 
 about:
   home: https://pypi.python.org/pypi/gmpy2
-  license: LGPL 3
+  license: LGPL-3.0-or-later
   license_file: COPYING.LESSER
   summary: 'GMP/MPIR, MPFR, and MPC interface to Python 2.6+ and 3.x'
 

@@ -1,0 +1,11 @@
+--- setup.py        2022-01-09 04:24:16.336090329 -0800
++++ setup.py    2022-01-09 04:24:42.124350480 -0800
+@@ -5,6 +5,8 @@
+ 
+ ON_WINDOWS = platform.system() == 'Windows'
+ _comp_args = ["DSHARED=1"]
++if ON_WINDOWS:
++    _comp_args += ["DMSC_USE_DLL=1"]
+ sources = ['src/gmpy2.c']
+ 
+ # Utility function to read the contents of the README file.

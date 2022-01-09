@@ -1,18 +1,11 @@
-diff --git a/setup.py b/setup.py
-index 893b874..88ab25f 100644
---- a/setup.py
-+++ b/setup.py
-@@ -74,10 +74,11 @@ class Gmpy2Build(build_ext):
-             # --mpir or on Windows and MSVC
-             _comp_args.append('DMPIR=1')
-             self.libraries.append('mpir')
--            self.libraries.remove('gmp')
-+            if 'gmp' in self.libraries:
-+                self.libraries.remove('gmp')
-             if ON_WINDOWS and not self.static:
-                 # MSVC shared build
--                _comp_args.append('MSC_USE_DLL')
-+                _comp_args.append('DMSC_USE_DLL')
-         _prefix = '-' if compiler != 'msvc' else '/'
-         for i in range(len(_comp_args)):
-             _comp_args[i] = ''.join([_prefix, _comp_args[i]])
+--- setup.py        2022-01-09 04:24:16.336090329 -0800
++++ setup.py    2022-01-09 04:24:42.124350480 -0800
+@@ -5,6 +5,8 @@
+ 
+ ON_WINDOWS = platform.system() == 'Windows'
+ _comp_args = ["DSHARED=1"]
++if ON_WINDOWS:
++    _comp_args += ["DMSC_USE_DLL=1", "DMPIR=1"]
+ sources = ['src/gmpy2.c']
+ 
+ # Utility function to read the contents of the README file.

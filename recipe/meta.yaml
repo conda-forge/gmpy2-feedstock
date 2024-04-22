@@ -15,7 +15,7 @@ source:
     - 0001-Disable-code-path-not-supported-by-MPIR.patch  # [win]
 
 build:
-  number: 0
+  number: 1
   script:
     - {{ PYTHON }} -m pip install . -vvv
 
@@ -24,6 +24,7 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - gmp           # [unix]
     - mpir          # [win]

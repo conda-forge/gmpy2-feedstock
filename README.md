@@ -7,7 +7,9 @@ Home: https://pypi.python.org/pypi/gmpy2
 
 Package license: LGPL-3.0-or-later
 
-Summary: GMP/MPIR, MPFR, and MPC interface to Python 2.6+ and 3.x
+Summary: GMP/MPIR, MPFR, and MPC interface to Python
+
+Development: https://github.com/aleaxit/gmpy
 
 Current build status
 ====================

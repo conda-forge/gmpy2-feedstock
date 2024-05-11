@@ -13,6 +13,9 @@ source:
     # https://github.com/conda-forge/gmp-feedstock/issues/34.
     # We need to disable newer features of GMP that are not available in MPIR.
     - patches/0002-Disable-code-path-not-supported-by-MPIR.patch  # [win]
+    # backport patch for 3.12 compatibility from upstream, see
+    # https://github.com/aleaxit/gmpy/issues/446#issuecomment-1784443227
+    - patches/0003-compatibility-for-python-3.12.patch
 
 build:
   number: 1

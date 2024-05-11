@@ -1,7 +1,7 @@
 From 0a09a06e62919f57031784ffafd47294354914ec Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Julian=20R=C3=BCth?= <julian.rueth@fsfe.org>
 Date: Mon, 22 Apr 2024 15:15:05 +0300
-Subject: [PATCH 2/2] Disable code path not supported by MPIR
+Subject: [PATCH 2/3] Disable code path not supported by MPIR
 
 ---
  src/gmpy2_pow.c | 80 +------------------------------------------------

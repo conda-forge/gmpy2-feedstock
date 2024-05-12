@@ -8,14 +8,17 @@ source:
   url: https://pypi.io/packages/source/g/gmpy2/gmpy2-{{ version }}.tar.gz
   sha256: bc297f1fd8c377ae67a4f493fc0f926e5d1b157e5c342e30a4d84dc7b9f95d96
   patches:
-    - win_setup.diff
+    - patches/0001-set-flags-necessary-for-windows-in-setup.py.patch
     # Currently, there is no GMP build on windows, see
     # https://github.com/conda-forge/gmp-feedstock/issues/34.
     # We need to disable newer features of GMP that are not available in MPIR.
-    - 0001-Disable-code-path-not-supported-by-MPIR.patch  # [win]
+    - patches/0002-Disable-code-path-not-supported-by-MPIR.patch  # [win]
+    # backport patch for 3.12 compatibility from upstream, see
+    # https://github.com/aleaxit/gmpy/issues/446#issuecomment-1784443227
+    - patches/0003-compatibility-for-python-3.12.patch
 
 build:
-  number: 0
+  number: 1
   script:
     - {{ PYTHON }} -m pip install . -vvv
 
@@ -24,6 +27,7 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - gmp           # [unix]
     - mpir          # [win]

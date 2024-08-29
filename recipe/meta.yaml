@@ -18,7 +18,7 @@ source:
     - patches/0003-compatibility-for-python-3.12.patch
 
 build:
-  number: 1
+  number: 2
   script:
     - {{ PYTHON }} -m pip install . -vvv
 

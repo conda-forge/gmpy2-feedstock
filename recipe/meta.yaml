@@ -18,7 +18,7 @@ source:
     - patches/0003-compatibility-for-python-3.12.patch
 
 build:
-  number: 2
+  number: 3
   script:
     - {{ PYTHON }} -m pip install . -vvv
 
@@ -30,7 +30,7 @@ requirements:
     - {{ stdlib("c") }}
   host:
     - gmp           # [unix]
-    - mpir          # [win]
+    - gmp          # [win]
     - mpfr
     - mpc
     - python
@@ -38,7 +38,7 @@ requirements:
     - setuptools
   run:
     - gmp           # [unix]
-    - mpir          # [win]
+    - gmp          # [win]
     - mpfr
     - mpc
     - python

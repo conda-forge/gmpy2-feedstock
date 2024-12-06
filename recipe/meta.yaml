@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/g/gmpy2/gmpy2-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/g/gmpy2/gmpy2-{{ version }}.tar.gz
   sha256: e83e07567441b78cb87544910cb3cc4fe94e7da987e93ef7622e76fb96650432
   patches:
     # backport patch for 3.12 compatibility from upstream, see

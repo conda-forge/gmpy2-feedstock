@@ -1,4 +1,4 @@
-{% set version = "2.1.5" %}
+{% set version = "2.2.1" %}
 
 package:
   name: gmpy2
@@ -6,14 +6,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/g/gmpy2/gmpy2-{{ version }}.tar.gz
-  sha256: bc297f1fd8c377ae67a4f493fc0f926e5d1b157e5c342e30a4d84dc7b9f95d96
-  patches:
-    # backport patch for 3.12 compatibility from upstream, see
-    # https://github.com/aleaxit/gmpy/issues/446#issuecomment-1784443227
-    - patches/0003-compatibility-for-python-3.12.patch
+  sha256: e83e07567441b78cb87544910cb3cc4fe94e7da987e93ef7622e76fb96650432
 
 build:
-  number: 3
+  number: 0
   script:
     - {{ PYTHON }} -m pip install . -vvv
 

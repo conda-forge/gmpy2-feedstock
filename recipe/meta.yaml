@@ -2,7 +2,7 @@
 
 package:
   name: gmpy2
-  version: "{{ version }}"
+  version: {{ version }}
 
 source:
   url: https://pypi.org/packages/source/g/gmpy2/gmpy2-{{ version }}.tar.gz

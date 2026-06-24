@@ -1,4 +1,4 @@
-{% set version = "2.3.0" %}
+{% set version = "2.3.1" %}
 
 package:
   name: gmpy2
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/g/gmpy2/gmpy2-{{ version }}.tar.gz
-  sha256: 2d943cc9051fcd6b15b2a09369e2f7e18c526bc04c210782e4da61b62495eb4a
+  sha256: 313f35e9fe6b9ddf72759b14dac25166fe5757c970403e4bbf87a70ab2be07df
 
 build:
-  number: 1
+  number: 0
   script:
     - {{ PYTHON }} -m pip install . -vvv --no-build-isolation
 

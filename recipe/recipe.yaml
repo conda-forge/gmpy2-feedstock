@@ -39,10 +39,21 @@ tests:
   - python:
       imports:
         - gmpy2
-      pip_check: false
+      pip_check: true
   - script:
       - python -c "import gmpy2; print('gmpy2.version():', gmpy2.version()); assert gmpy2.version() == '${{ version }}', f'Expected ${{ version }}, got {gmpy2.version()}'"
       - python -c "import importlib.metadata; v = importlib.metadata.version('gmpy2'); print('metadata version:', v); assert v == '${{ version }}', f'Expected ${{ version }}, got {v}'"
+      - pytest -nauto
+    requirements:
+      run:
+        - hypothesis
+        - mpmath
+        - numpy
+        - pytest
+        - pytest-xdist
+    files:
+      source:
+        - test/
 
 about:
   license: LGPL-3.0-or-later
